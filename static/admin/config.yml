@@ -25,6 +25,13 @@ collections:
     folder: "content/media"
     create: true
     slug: "{{slug}}"
+    summary: >
+      <img src='{{file}}' style='height:30px; vertical-align:middle;' /> 
+      {{title}} &nbsp;
+      <a href="#" onclick="navigator.clipboard.writeText('{{file}}'); alert('Copied!'); return false;" title="Copy public URL">
+        🔗 Copy
+      </a>
+
     fields:
       - label: "Ảnh gốc"
         name: "file"
