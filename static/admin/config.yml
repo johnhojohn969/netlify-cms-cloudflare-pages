@@ -20,3 +20,17 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: "media"
+    label: "Media Metadata"
+    folder: "content/media"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Ảnh gốc"
+        name: "file"
+        widget: "image"
+        media_folder: "/media/uploads"
+        public_folder: "/media/uploads"
+      - { label: "Visibility", name: "visibility", widget: "select", options: ["public", "private"] }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
