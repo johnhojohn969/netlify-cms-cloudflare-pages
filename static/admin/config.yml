@@ -5,8 +5,8 @@ backend:
   site_domain: https://cdn.attyzen.com
   base_url: https://cdn.attyzen.com
   auth_endpoint: /api/auth
-media_folder: static/img
-public_folder: /img
+media_folder: /media/uploads
+public_folder: /media/uploads
 collections:
   - name: 'blog'
     label: 'Blog'
@@ -26,11 +26,7 @@ collections:
     create: true
     slug: "{{slug}}"
     summary: >
-      <img src='{{file}}' style='height:30px; vertical-align:middle;' /> 
-      {{title}} &nbsp;
-      <a href="#" onclick="navigator.clipboard.writeText('{{file}}'); alert('Copied!'); return false;" title="Copy public URL">
-        🔗 Copy
-      </a>
+      {{title}} | {{file}} | {{Visibility}}'
 
     fields:
       - label: "Ảnh gốc"
@@ -39,5 +35,7 @@ collections:
         media_folder: "/media/uploads"
         public_folder: "/media/uploads"
       - { label: "Visibility", name: "visibility", widget: "select", options: ["public", "private"] }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Tag', name: 'tag', widget: 'string' }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
